@@ -1,4 +1,4 @@
-import { Routes } from "solid-app-router";
+import { Routes } from "@solidjs/router";
 import { createEffect, createSignal } from "solid-js";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
@@ -19,10 +19,8 @@ setUsers(res.json())
   return (
     <div class="container">
       <Nav/>
-      <Routes>
-      <Route path="/" element={<Home />} />
-      </Routes>
-    </div>
+      
+          </div>
   );
 }
 
