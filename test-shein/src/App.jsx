@@ -13,12 +13,22 @@ const res = await fetch('https://jsonplaceholder.typicode.com/users')
 setUsers(res.json())
 })
 */
+
+import { lazy, Suspense } from "solid-js";
+
+const Greeting = lazy(async () => {
+  // simulate delay
+  await new Promise(r => setTimeout(r, 1000))
+  return import("./components/greeting")
+});
+
  function App() {
 
 
   return (
     <div class="container">
       <Nav/>
+      <Greeting name="Jake" />
       <Routes>
       
         <Route path="/" component={Home} />
