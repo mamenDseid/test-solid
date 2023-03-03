@@ -21,9 +21,15 @@ const Greeting = lazy(async () => {
   await new Promise(r => setTimeout(r, 1000))
   return import("./components/greeting")
 });
+const getData = async()=>{
+const res = await fetch('https://jsonplaceholder.typicode.com/users')
+return res.json()
+}
 
  function App() {
-
+getData().then((response)=>{
+  console.log(response)
+})
 
   return (
     <div class="container">
